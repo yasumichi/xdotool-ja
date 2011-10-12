@@ -1,0 +1,2306 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2011-10-09 01:31+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: =head1
+#: xdotool.pod:3
+msgid "NAME"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:5
+msgid "xdotool - command-line X11 automation tool"
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:7
+msgid "SYNOPSIS"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:9
+msgid "B<xdotool> I<cmd> I<args...>"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:11
+#, no-wrap
+msgid ""
+"Notation: Some documentation uses I<[window]> to denote an optional\n"
+"window argument. This case means that the argument, if not present, will\n"
+"default to \"%1\". See L<WINDOW STACK> for what \"%1\" means.\n"
+" \n"
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:15
+msgid "DESCRIPTION"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:17
+msgid ""
+"B<xdotool> lets you programatically (or manually) simulate keyboard input "
+"and mouse activity, move and resize windows, etc. It does this using X11's "
+"XTEST extension and other Xlib functions."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:21
+msgid ""
+"There is some support for Extended Window Manager Hints (aka EWMH or "
+"NetWM).  See the L</EXTENDED WINDOW MANAGER HINTS> section for more "
+"information."
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:24
+msgid "KEYBOARD COMMANDS"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:28
+msgid "B<key> I<[options]> I<keystroke> [I<keystroke> ...]"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:30 xdotool.pod:89 xdotool.pod:712 xdotool.pod:849
+msgid "Options:"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:34
+msgid "B<--window window>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:36
+msgid ""
+"Send keystrokes to a specific window id. You can use L<WINDOW STACK> "
+"references like \"%1\" and \"%@\" here. If there is a window stack, then "
+"\"%1\" is the default, otherwise the current window is used."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:40
+msgid "See also: L<SENDEVENT NOTES> and L<WINDOW STACK>"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:42 xdotool.pod:104 xdotool.pod:167 xdotool.pod:209 xdotool.pod:225
+msgid "B<--clearmodifiers>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:44 xdotool.pod:106
+msgid "Clear modifiers before sending keystrokes. See L<CLEARMODIFIERS> below."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:46 xdotool.pod:100
+msgid "B<--delay milliseconds>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:48 xdotool.pod:102
+msgid "Delay between keystrokes. Default is 12ms."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:52
+msgid ""
+"Type a given keystroke. Examples being \"alt+r\", \"Control_L+J\", "
+"\"ctrl+alt+n\", \"BackSpace\"."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:55
+msgid ""
+"Generally, any valid X Keysym string will work. Multiple keys are separated "
+"by '+'. Aliases exist for \"alt\", \"ctrl\", \"shift\", \"super\", and "
+"\"meta\" which all map to Foo_L, such as Alt_L and Control_L, etc."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:59
+msgid ""
+"In cases where your keyboard doesn't actually have the key you want to type, "
+"xdotool will automatically find an unused keycode and use that to type the "
+"key."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:62
+msgid ""
+"With respect to L<COMMAND CHAINING>, this command consumes the remainder of "
+"the arguments or until a new xdotool command is seen, because no xdotool "
+"commands are valid keystrokes."
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:66
+#, no-wrap
+msgid ""
+"Example: Send the keystroke \"F2\"\n"
+" xdotool key F2\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:69
+#, no-wrap
+msgid ""
+"Example: Send 'a' with an accent over it (not on english keyboards, but "
+"still\n"
+"works with xdotool)\n"
+" xdotool key Aacute\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:73
+#, no-wrap
+msgid ""
+"Example: Send ctrl+l and then BackSpace as separate keystrokes:\n"
+" xdotool key ctrl+l BackSpace\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:76
+#, no-wrap
+msgid ""
+"Example: Send ctrl+c to all windows matching title 'gdb' (See L<COMMAND "
+"CHAINING>)\n"
+" xdotool search --name gdb key ctrl+c\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:79
+msgid "B<keydown> I<[options]> I<keystroke>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:81
+msgid "Same as above, except only keydown (press) events are sent."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:83
+msgid "B<keyup> I<keystroke>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:85
+msgid "Same as above, except only keyup (release) events are sent."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:87
+msgid "B<type> I<[options]> I<something to type>"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:93
+msgid "B<--window windowid>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:95
+msgid ""
+"Send keystrokes to a specific window id. See L<SENDEVENT NOTES> below. The "
+"default, if no window is given, depends on the window stack. If the window "
+"stack is empty the current window is typed at using XTEST. Otherwise, the "
+"default is \"%1\" (see L<WINDOW STACK>)."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:110
+msgid ""
+"Types as if you had typed it. Supports newlines and tabs (ASCII newline and "
+"tab). Each keystroke is separated by a delay given by the B<--delay> option."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:113
+msgid ""
+"With respect to L<COMMAND CHAINING>, this command consumes the remainder of "
+"the arguments and types them. That is, no commands can chain after 'type'."
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:116
+#, no-wrap
+msgid ""
+"Example: to type 'Hello world!' you would do:\n"
+" xdotool type 'Hello world!'\n"
+"\n"
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:121
+msgid "MOUSE COMMANDS"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:125
+msgid "B<mousemove> I<[options]> I<x y OR 'restore'>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:127
+msgid "Move the mouse to the specific X and Y coordinates on the screen."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:129
+msgid ""
+"You can move the mouse to the previous location if you specify 'restore' "
+"instead of an X and Y coordinate. Restoring only works if you have moved "
+"previously in this same command invocation. Further, it does not work with "
+"the --window option."
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:134
+#, no-wrap
+msgid ""
+"For example, to click the top-left corner of the screen and move the mouse "
+"to\n"
+"the original position before you moved it, use this:\n"
+" xdotool mousemove 0 0 click 1 mousemove restore\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:140
+msgid "B<--window WINDOW>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:142
+msgid ""
+"Specify a window to move relative to. Coordinates 0,0 are at the top left of "
+"the window you choose."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:145
+msgid ""
+"L<WINDOW STACK> references are valid here, such as %1 and %@. Though, using "
+"%@ probably doesn't make sense."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:148
+msgid "B<--screen SCREEN>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:150
+msgid ""
+"Move the mouse to the specified screen to move to. This is only useful if "
+"you have multiple screens and ARE NOT using Xinerama."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:153
+msgid ""
+"The default is the current screen. If you specify --window, the --screen "
+"flag is ignored."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:156 xdotool.pod:190
+msgid "B<--polar>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:158 xdotool.pod:192
+msgid ""
+"Use polar coordinates. This makes 'x' an angle (in degrees, 0-360, etc) and "
+"'y' the distance."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:161 xdotool.pod:195
+msgid ""
+"Rotation starts at 'up' (0 degrees) and rotates clockwise: 90 = right, 180 = "
+"down, 270 = left."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:164
+msgid ""
+"The origin defaults to the center of the current screen. If you specify a "
+"--window, then the origin is the center of that window."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:169 xdotool.pod:211
+msgid "See L<CLEARMODIFIERS>"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:171 xdotool.pod:198 xdotool.pod:578 xdotool.pod:610 xdotool.pod:631 xdotool.pod:647 xdotool.pod:663 xdotool.pod:699 xdotool.pod:770 xdotool.pod:853
+msgid "B<--sync>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:173 xdotool.pod:200
+msgid ""
+"After sending the mouse move request, wait until the mouse is actually "
+"moved. If no movement is necessary, we will not wait. This is useful for "
+"scripts that depend on actions being completed before moving on."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:177
+msgid ""
+"Note: We wait until the mouse moves at all, not necessarily that it actually "
+"reaches your intended destination. Some applications lock the mouse cursor "
+"to certain regions of the screen, so waiting for any movement is better in "
+"the general case than waiting for a specific target."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:184
+msgid "B<mousemove_relative> [options] I<x> I<y>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:186
+msgid ""
+"Move the mouse x,y pixels relative to the current position of the mouse "
+"cursor."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:204
+msgid ""
+"Note that we wait until the mouse moves at all, not necessarily that it "
+"actually reaches your intended destination. Some applications lock the mouse "
+"cursor to certain regions of the screen, so waiting for any movement is "
+"better in the general case than waiting for a specific target."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:215
+msgid "B<click> I<[options]> I<button>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:217
+msgid ""
+"Send a click, that is, a mousedown followed by mouseup for the given button "
+"with a short delay between the two (currently 12ms)."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:220
+msgid ""
+"Buttons generally map this way: Left mouse is 1, middle is 2, right is 3, "
+"wheel up is 4, wheel down is 5."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:227
+msgid "Clear modifiers before clicking. See L<CLEARMODIFIERS> below."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:229
+msgid "B<--repeat> REPEAT"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:231
+msgid ""
+"Specify how many times to click. Default is 1. For a double-click, use "
+"'--repeat 2'"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:234
+msgid "B<--delay> MILLISECONDS"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:236
+msgid ""
+"Specify how long, in milliseconds, to delay between clicks. This option is "
+"not used if the I<--repeat> flag is set to 1 (default)."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:239
+msgid "B<--window> WINDOW"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:241
+msgid ""
+"Specify a window to send a click to. See L<SENDEVENT NOTES> below for "
+"caveats. Uses the current mouse position when generating the event."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:244
+msgid ""
+"The default, if no window is given, depends on the window stack. If the "
+"window stack is empty the current window is typed at using XTEST. Otherwise, "
+"the default is \"%1\" (see L<WINDOW STACK>)."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:250
+msgid "B<mousedown> I<[options]> I<button>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:252
+msgid "Same as B<click>, except only a mouse down is sent."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:254
+msgid "B<mouseup> I<[options]> I<button>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:256
+msgid "Same as B<click>, except only a mouse up is sent."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:258
+msgid "B<getmouselocation> I<[--shell]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:260
+msgid ""
+"Outputs the x, y, screen, and window id of the mouse cursor. Screen numbers "
+"will be nonzero if you have multiple monitors and are not using Xinerama."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:265 xdotool.pod:536
+msgid "B<--shell>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:267
+msgid "This makes getmouselocation output shell data you can eval. Example:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:269
+#, no-wrap
+msgid ""
+" % xdotool getmouselocation --shell\n"
+" X=880\n"
+" Y=443\n"
+" SCREEN=0\n"
+" WINDOW=16777250\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:275
+#, no-wrap
+msgid ""
+" % eval $(xdotool getmouselocation --shell)\n"
+" % echo $X,$Y\n"
+" 714,324\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:281
+msgid "B<behave_screen_edge> I<[options]> I<where> I<command ...>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:283
+msgid "Bind an action to events when the mouse hits the screen edge or corner."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:285
+msgid "Options are:"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:289
+msgid "I<--delay MILLISECONDS>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:291
+msgid ""
+"Delay in milliseconds before running the command. This allows you to require "
+"a given edge or corner to be held for a short period before your command "
+"will run. If you leave the edge or corner before the delay expires then the "
+"time will reset."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:296
+msgid "I<--quiesce MILLISECONDS>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:298
+msgid ""
+"Delay in milliseconds before the next command will run. This helps prevent "
+"accidentally running your command extra times; especially useful if you have "
+"a very short --delay (like the default of 0)."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:304
+msgid "Event timeline"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:306
+#, no-wrap
+msgid ""
+" * Mouse hits an edge or corner.\n"
+" * If delay is nonzero, the mouse must stay in this edge or corner until "
+"delay time expires.\n"
+" * If still in the edge/corner, trigger.\n"
+" * If quiesce is nonzero, then there is a cool-down period where the next\n"
+"   trigger cannot occur\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:312
+msgid "Valid 'where' values are:"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:316
+msgid "left"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:318
+msgid "top-left"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:320
+msgid "top"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:322
+msgid "top-right"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:324
+msgid "right"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:326
+msgid "bottom-left"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:328
+msgid "bottom"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:330
+msgid "bottom-right"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:334
+#, no-wrap
+msgid ""
+"Examples:\n"
+" # Activate google-chrome when you move the mouse to the bottom-left "
+"corner:\n"
+" xdotool behave_screen_edge bottom-left \\\n"
+"   search --class google-chrome windowactivate\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:339
+#, no-wrap
+msgid ""
+" # Go to the next workspace (right). Known to work in GNOME (metacity and "
+"compiz)\n"
+" xdotool behave_screen_edge --delay 500 bottom-right key XF86Forward\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:342
+#, no-wrap
+msgid ""
+" # Activate firefox and do a web search in a new tab for text in your "
+"clipboard\n"
+" xdotool behave_screen_edge --delay 1000 top-left \\\n"
+"     search --classname Navigator \\\n"
+"     windowactivate --sync key --delay 250 ctrl+t ctrl+k ctrl+v Return\n"
+"\n"
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:349
+msgid "WINDOW COMMANDS"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:353
+msgid "B<search> I<[options]> I<pattern>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:355
+msgid ""
+"Search for windows with titles, names, or classes with a regular expression "
+"pattern. The output is line-delimited list of X window identifiers. If you "
+"are using L<COMMAND CHAINING>, the L<search> command will only write window "
+"ids to stdout if it is the last (or only) command in the chain; otherwise, "
+"it is silent."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:361
+msgid ""
+"The result is saved to the window stack for future chained commands. See "
+"L<WINDOW STACK> and L<COMMAND CHAINING> for details."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:364
+msgid ""
+"The default options are C<--name --class --classname> (unless you specify "
+"one one or more of --name --class or --classname)."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:367 xdotool.pod:568
+msgid "The options available are:"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:371
+msgid "B<--class>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:373
+msgid "Match against the window class."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:375
+msgid "B<--classname>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:377
+msgid "Match against the window classname."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:379
+msgid "B<--maxdepth> N"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:381
+msgid ""
+"Set recursion/child search depth. Default is -1, meaning infinite. 0 means "
+"no depth, only root windows will be searched. If you only want toplevel "
+"windows, set maxdepth of 1 (or 2, depending on how your window manager does "
+"decorations)."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:386
+msgid "B<--name>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:388
+msgid ""
+"Match against the window name. This is the same string that is displayed in "
+"the window titlebar."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:391
+msgid "B<--onlyvisible>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:393
+msgid ""
+"Show only visible windows in the results. This means ones with map state "
+"IsViewable."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:396
+msgid "B<--pid PID>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:398
+msgid ""
+"Match windows that belong to a specific process id. This may not work for "
+"some X applications that do not set this metadata on its windows."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:401
+msgid "B<--screen N>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:403
+msgid ""
+"Select windows only on a specific screen. Default is to search all "
+"screens. Only meaningful if you have multiple displays and are not using "
+"Xinerama."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:407
+msgid "B<--desktop N>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:409
+msgid ""
+"Only match windows on a certain desktop. 'N' is a number. The default is to "
+"search all desktops."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:412
+msgid "B<--limit N>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:414
+msgid ""
+"Stop searching after finding N matching windows. Specifying a limit will "
+"help speed up your search if you only want a few results."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:417
+msgid "The default is no search limit (which is equivalent to '--limit 0')"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:419
+msgid "B<--title>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:421
+msgid "DEPRECATED. See --name."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:423
+msgid "B<--all>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:425
+msgid "Require that all conditions be met. For example:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:427
+#, no-wrap
+msgid ""
+" xdotool search --all --pid 1424 --name \"Hello World\"\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:429
+msgid ""
+"This will match only windows that have \"Hello World\" as a name and are "
+"owned by pid 1424."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:432
+msgid "B<--any>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:434
+msgid ""
+"Match windows that match any condition (logically, 'or'). This is on by "
+"default. For example:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:437
+#, no-wrap
+msgid ""
+" xdotool search --any --pid 1424 --name \"Hello World\"\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:439
+msgid ""
+"This will match any windows owned by pid 1424 or windows with name \"Hello "
+"World\""
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:442
+msgid "B<--sync >"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:444
+msgid ""
+"Block until there are results. This is useful when you are launching an "
+"application want want to wait until the application window is visible.  For "
+"example:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:448
+#, no-wrap
+msgid ""
+" google-chrome &\n"
+" xdotool search --sync --onlyvisible --class \"google-chrome\"\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:453
+msgid "B<selectwindow>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:455
+msgid ""
+"Get the window id (for a client) by clicking on it. Useful for having "
+"scripts query you humans for what window to act on. For example, killing a "
+"window by clicking on it:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:459
+#, no-wrap
+msgid ""
+" xdotool selectwindow windowkill\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:461
+msgid "B<behave> I<window> I<action> I<command ...>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:463
+msgid ""
+"Bind an action to an event on a window. This lets you run additional xdotool "
+"commands whenever a matched event occurs."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:466
+msgid ""
+"The command run as a result of the behavior is run with %1 being the window "
+"that was acted upon. Examples follow after the event list."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:469
+msgid "The following are valid events:"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:473
+msgid "B<mouse-enter>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:475
+msgid ""
+"Fires when the mouse enters a window. This is similar to 'mouse over' events "
+"in javascript, if that helps."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:478
+msgid "B<mouse-leave>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:480
+msgid "Fires when the mouse leaves a window. This is the opposite of 'mouse-enter'"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:482
+msgid "B<mouse-click>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:484
+msgid ""
+"Fires when the mouse is clicked. Specifically, when the mouse button is "
+"released."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:486
+msgid "B<focus>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:488
+msgid "Fires when the window gets input focus."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:490
+msgid "B<blur>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:492
+msgid "Fires when the window loses focus."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:496 xdotool.pod:601
+msgid "Examples:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:498
+#, no-wrap
+msgid ""
+" # Print the cursor location whenever the mouse enters a currently-visible\n"
+" # window:\n"
+" xdotool search --onlyvisible . behave %@ mouse-enter getmouselocation\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:502
+#, no-wrap
+msgid ""
+" # Print the window title and pid whenever an xterm gets focus\n"
+" xdotool search --class xterm behave %@ focus getwindowname getwindowpid\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:505
+#, no-wrap
+msgid ""
+" # Emulate focus-follows-mouse\n"
+" xdotool search . behave %@ mouse-enter windowfocus\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:508
+msgid "B<getwindowpid> I<[window]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:510
+msgid ""
+"Output the PID owning a given window. This requires effort from the "
+"application owning a window and may not work for all windows. This uses "
+"_NET_WM_PID property of the window. See L<EXTENDED WINDOW MANAGER HINTS> "
+"below for more information."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:515 xdotool.pod:526
+msgid ""
+"If no window is given, the default is '%1'. If no windows are on the stack, "
+"then this is an error. See L<WINDOW STACK> for more details."
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:518
+#, no-wrap
+msgid ""
+"Example: Find the PID for all xterms:\n"
+" xdotool search --class xterm getwindowpid %@\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:521
+msgid "B<getwindowname> I<[window]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:523
+msgid ""
+"Output the name of a given window, also known as the title. This is the text "
+"displayed in the window's titlebar by your window manager."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:529
+msgid "B<getwindowgeometry> [options] I<[window]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:531
+msgid ""
+"Output the geometry (location and position) of a window. The values include: "
+"x, y, width, height, and screen number."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:538
+msgid "Output values suitable for 'eval' in a shell."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:542
+msgid "B<getwindowfocus> [-f]"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:544
+msgid ""
+"Prints the window id of the currently focused window. Saves the result to "
+"the window stack. See L<WINDOW STACK> for more details."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:547
+msgid ""
+"If the current window has no WM_CLASS property, we assume it is not a normal "
+"top-level window and traverse up the parents until we find a window with a "
+"WM_CLASS set and return that window id."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:551
+msgid ""
+"If you really want the window currently having focus and don't care if it "
+"has a WM_CLASS setting, then use 'getwindowfocus -f'"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:554
+msgid "B<windowsize> [options] [window] width height"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:556
+msgid ""
+"Set the window size of the given window. If no window is given, %1 is the "
+"default.  See L<WINDOW STACK> and L<COMMAND CHAINING> for more details."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:559
+msgid ""
+"Percentages are valid for width and height. They are relative to the "
+"geometry of the screen the window is on. For example, to make a window the "
+"full width of the screen, but half height:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:563
+#, no-wrap
+msgid ""
+" xdotool windowsize I<window> 100% 50%\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:565
+msgid ""
+"Percentages are valid with --usehints and still mean pixel-width relative to "
+"the screen size."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:572
+msgid "B<--usehints>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:574
+msgid ""
+"Use window sizing hints (when available) to set width and height.  This is "
+"useful on terminals for setting the size based on row/column of text rather "
+"than pixels."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:580
+msgid ""
+"After sending the window size request, wait until the window is actually "
+"resized. If no change is necessary, we will not wait. This is useful for "
+"scripts that depend on actions being completed before moving on."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:584
+msgid ""
+"Note: Because many window managers may ignore or alter the original resize "
+"request, we will wait until the size changes from its original size, not "
+"necessary to the requested size."
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:590
+#, no-wrap
+msgid ""
+"Example: To set a terminal to be 80x24 characters, you would use:\n"
+" xdotool windowsize --usehints I<some_windowid> 80 24\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:593
+msgid "B<windowmove> I<[options]> I<[window]> I<x> I<y>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:595
+msgid ""
+"Move the window to the given position. If no window is given, %1 is the "
+"default. See L<WINDOW STACK> and L<COMMAND CHAINING> for more details."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:598
+msgid ""
+"If the given x coordinate is literally 'x', then the window's current x "
+"position will be unchanged. The same applies for 'y'."
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:603
+#, no-wrap
+msgid ""
+" xdotool getactivewindow windowmove 100 100    # Moves to 100,100\n"
+" xdotool getactivewindow windowmove x 100      # Moves to x,100\n"
+" xdotool getactivewindow windowmove 100 y      # Moves to 100,y\n"
+" xdotool getactivewindow windowmove 100 y      # Moves to 100,y\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:612
+msgid ""
+"After sending the window move request, wait until the window is actually "
+"moved. If no movement is necessary, we will not wait. This is useful for "
+"scripts that depend on actions being completed before moving on."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:616 xdotool.pod:815
+msgid "B<--relative>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:618
+msgid "Make movement relative to the current window position."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:622
+msgid "B<windowfocus> I<[options]> I<[window]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:624
+msgid ""
+"Focus a window. If no window is given, %1 is the default. See L<WINDOW "
+"STACK> and L<COMMAND CHAINING> for more details."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:627
+msgid ""
+"Uses L<XSetInputFocus> which may be ignored by some window managers or "
+"programs."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:633
+msgid ""
+"After sending the window focus request, wait until the window is actually "
+"focused. This is useful for scripts that depend on actions being completed "
+"before moving on."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:639
+msgid "B<windowmap> I<[options]> I<[window]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:641
+msgid ""
+"Map a window. In X11 terminology, mapping a window means making it visible "
+"on the screen. If no window is given, %1 is the default. See L<WINDOW STACK> "
+"and L<COMMAND CHAINING> for more details."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:649
+msgid ""
+"After requesting the window map, wait until the window is actually mapped "
+"(visible). This is useful for scripts that depend on actions being completed "
+"before moving on."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:655
+msgid "B<windowminimize> I<[options]> I<[window]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:657
+msgid ""
+"Minimize a window. In X11 terminology, this is called 'iconify.' If no "
+"window is given, %1 is the default. See L<WINDOW STACK> and L<COMMAND "
+"CHAINING> for more details."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:665
+msgid ""
+"After requesting the window minimize, wait until the window is actually "
+"minimized. This is useful for scripts that depend on actions being completed "
+"before moving on."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:671
+msgid "B<windowraise> I<[window_id=%1]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:673
+msgid ""
+"Raise the window to the top of the stack. This may not work on all window "
+"managers. If no window is given, %1 is the default. See L<WINDOW STACK> and "
+"L<COMMAND CHAINING> for more details."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:677
+msgid "B<windowreparent> I<[source_window]> I<destination_window>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:679
+msgid ""
+"Reparent a window. This moves the I<source_window> to be a child window of "
+"I<destination_window>. If no source is given, %1 is the default.  L<WINDOW "
+"STACK> window references (like %1) are valid for both I<source_window> and "
+"I<destination_window> See L<WINDOW STACK> and L<COMMAND CHAINING> for more "
+"details."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:685
+msgid "B<windowkill> I<[window]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:687
+msgid ""
+"Kill a window. This action will destroy the window and kill the client "
+"controlling it. If no window is given, %1 is the default. See L<WINDOW "
+"STACK> and L<COMMAND CHAINING> for more details."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:691
+msgid "B<windowunmap> I<[options]> I<[window_id=%1]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:693
+msgid ""
+"Unmap a window, making it no longer appear on your screen. If no window is "
+"given, %1 is the default. See L<WINDOW STACK> and L<COMMAND CHAINING> for "
+"more details."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:701
+msgid ""
+"After requesting the window unmap, wait until the window is actually "
+"unmapped (hidden). This is useful for scripts that depend on actions being "
+"completed before moving on."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:707
+msgid "B<set_window> I<[options]> I<[windowid=%1]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:709
+msgid ""
+"Set properties about a window. If no window is given, %1 is the default. See "
+"L<WINDOW STACK> and L<COMMAND CHAINING> for more details."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:716
+msgid "B<--name newname>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:718
+msgid "Set window WM_NAME (the window title, usually)"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:720
+msgid "B<--icon-name newiconname>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:722
+msgid "Set window WM_ICON_NAME (the window title when minimized, usually)"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:724
+msgid "B<--role newrole>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:726
+msgid "Set window WM_WINDOW_ROLE"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:728
+msgid "B<--classname newclassname>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:730
+msgid "Set window class name (not to be confused with window class)"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:732
+msgid "B<--class newclass>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:734
+msgid "Set window class (not to be confused with window class name)"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:736
+msgid "B<--overrideredirect value>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:738
+msgid ""
+"Set window's override_redirect value. This value is a hint to the window "
+"manager for whether or not it should be managed. If the redirect value is 0, "
+"then the window manager will draw borders and treat this window normally. If "
+"the value is 1, the window manager will ignore this window."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:743
+msgid ""
+"If you change this value, your window manager may not notice the change "
+"until the window is mapped again, so you may want to issue 'windowunmap' and "
+"'windowmap' to make the window manager take note."
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:751
+msgid "DESKTOP AND WINDOW COMMANDS"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:753
+msgid ""
+"These commands follow the EWMH standard. See the section L<EXTENDED WINDOW "
+"MANAGER HINTS> for more information."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:758
+msgid "B<windowactivate> I<[options]> I<[window]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:760
+msgid ""
+"Activate the window. This command is different from windowfocus: if the "
+"window is on another desktop, we will switch to that desktop. It also uses a "
+"different method for bringing the window up. I recommend trying this command "
+"before using windowfocus, as it will work on more window managers."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:765
+msgid ""
+"If no window is given, %1 is the default. See L<WINDOW STACK> and L<COMMAND "
+"CHAINING> for more details."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:772
+msgid ""
+"After sending the window activation, wait until the window is actually "
+"activated. This is useful for scripts that depend on actions being completed "
+"before moving on."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:778
+msgid "B<getactivewindow>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:780
+msgid ""
+"Output the current active window. This command is often more reliable than "
+"getwindowfocus. The result is saved to the window stack. See L<WINDOW STACK> "
+"for more details."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:784
+msgid "B<set_num_desktops> I<number>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:786
+msgid "Changes the number of desktops or workspaces."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:788
+msgid "B<get_num_desktops>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:790
+msgid "Output the current number of desktops."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:792
+msgid "B<get_desktop_viewport> I<[--shell]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:794
+msgid ""
+"Report the current viewport's position. If --shell is given, the output is "
+"friendly to shell eval."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:797
+msgid ""
+"Viewports are sometimes used instead of 'virtual desktops' on some window "
+"managers. A viewport is simply a view on a very large desktop area."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:800
+msgid "B<set_desktop_viewport> I<x> I<y>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:802
+msgid ""
+"Move the viewport to the given position. Not all requests will be obeyed - "
+"some windowmangers only obey requests that align to workspace boundaries, "
+"such as the screen size."
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:806
+#, no-wrap
+msgid ""
+"For example, if your screen is 1280x800, you can move to the 2nd workspace "
+"by doing:\n"
+" xdotool set_desktop_viewport 1280 0\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:809
+msgid "B<set_desktop> I<[options]> I<desktop_number>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:811
+msgid "Change the current view to the specified desktop."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:817
+msgid ""
+"Use relative movements instead of absolute. This lets you move relative to "
+"the current desktop."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:822
+msgid "B<get_desktop>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:824
+msgid "Output the current desktop in view."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:826
+msgid "B<set_desktop_for_window> I<[window]> I<desktop_number>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:828
+msgid ""
+"Move a window to a different desktop. If no window is given, %1 is the "
+"default. See L<WINDOW STACK> and L<COMMAND CHAINING> for more details."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:831
+msgid "B<get_desktop_for_window> I<[window]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:833
+msgid ""
+"Output the desktop currently containing the given window. Move a window to a "
+"different desktop. If no window is given, %1 is the default. See L<WINDOW "
+"STACK> and L<COMMAND CHAINING> for more details."
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:839
+msgid "MISCELLANEOUS COMMANDS"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:841
+#, no-wrap
+msgid " \n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:844
+msgid "B<exec> I<[options]> I<command> I<[...]>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:846
+msgid ""
+"Execute a program. This is often useful when combined with "
+"behave_screen_edge to do things like locking your screen."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:855
+msgid ""
+"Block until the child process exits. The child process exit status is then "
+"passed to the parent process (xdotool) which copies it."
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:860
+#, no-wrap
+msgid ""
+"Examples:\n"
+" # Lock the screen when the mouse sits in the top-right corner\n"
+" xdotool behave_screen_edge --delay 1000 top-right \\\n"
+"   exec gnome-screensaver-command --lock\n"
+" # Substitute 'xscreensaver-command -lock' if you use that program.\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:866
+#, no-wrap
+msgid ""
+" # The following will fail to move the mouse because we use '--sync' and\n"
+" # /bin/false exits nonzero:\n"
+" xdotool exec --sync /bin/false mousemove 0 0\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:870
+#, no-wrap
+msgid ""
+" # This succeeds, though, since we do not use --sync on the exec command.\n"
+" xdotool exec /bin/false mousemove 0 0\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:873
+msgid "B<sleep> I<seconds>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:875
+msgid ""
+"Sleep for a specified period. Fractions of seconds (like 1.3, or 0.4) are "
+"valid, here."
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:880
+msgid "SCRIPTS"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:882
+msgid ""
+"xdotool can read a list of commands via stdin or a file if you want. A "
+"script will fail when any command fails."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:885
+msgid ""
+"Truthfully, 'script' mode isn't fully fleshed out and may fall below your "
+"expectations. If you have suggestions, please email the list or file a bug "
+"(See L<CONTACT>)."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:889
+msgid ""
+"Scripts can use positional arguments (Represented by $1, $2, ...) and "
+"environment variables (like $HOME or $WINDOWID). Quoting arguments should "
+"work as expected."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:893
+msgid ""
+"Scripts are processed for parameter and environment variable expansion and "
+"then run as if you had invoked xdotool with the entire script on one line "
+"(using COMMAND CHAINING)."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:899
+msgid "* Read commands from a file:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:901
+#, no-wrap
+msgid ""
+" xdotool filename\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:903
+msgid "* Read commands from stdin:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:905
+#, no-wrap
+msgid ""
+" xdotool -\n"
+"\n"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:907
+msgid "* Read commands from a redirected file"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:909
+#, no-wrap
+msgid ""
+" xdotool - < myfile\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:913
+msgid "You can also write scripts that only execute xdotool. Example:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:915
+#, no-wrap
+msgid ""
+" #!/usr/local/bin/xdotool\n"
+" search --onlyvisible --classname $1\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:918
+#, no-wrap
+msgid ""
+" windowsize %@ $2 $3\n"
+" windowraise %@\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:921
+#, no-wrap
+msgid ""
+" windowmove %1 0 0\n"
+" windowmove %2 $2 0\n"
+" windowmove %3 0 $3\n"
+" windowmove %4 $2 $3\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:926
+msgid ""
+"This script will take all windows matched by the classname query given by "
+"arg1 ($1) and sizes/moves them into a 2x2 grid with windows sized by the 2nd "
+"and 3rd parameters."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:930
+msgid "Here's an example usage:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:932
+#, no-wrap
+msgid ""
+" % ./myscript xterm 600 400\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:934
+msgid ""
+"Running it like this will take 4 visible xterms, raise them, and move them "
+"into a 2x2 tile grid with each window 600x400 pixels in size."
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:937
+msgid "CLEARMODIFIERS"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:939
+msgid ""
+"Any command taking the I<--clearmodifiers> flag will attempt to clear any "
+"active input modifiers during the command and restore them afterwards."
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:942
+#, no-wrap
+msgid ""
+"For example, if you were to run this command:\n"
+" xdotool key a\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:945
+msgid ""
+"The result would be 'a' or 'A' depending on whether or not you were holding "
+"the shift key on your keyboard. Often it is undesirable to have any "
+"modifiers active, so you can tell xdotool to clear any active modifiers."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:949
+msgid ""
+"The order of operations if you hold shift while running 'xdotool key "
+"--clearmodifiers a' is this:"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:953
+msgid "1. Query for all active modifiers (finds shift, in this case)"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:955
+msgid "2. Try to clear shift by sending 'key up' for the shift key"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:957
+msgid "3. Runs normal 'xdotool key a'"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:959
+msgid "4. Restore shift key by sending 'key down' for shift"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:963
+msgid "The I<--clearmodifiers> flag can currently clear of the following:"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:967
+msgid ""
+"* any key in your active keymap that has a modifier associated with it.  "
+"(See L<xmodmap(1)>'s 'xmodmap -pm' output)"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:970
+msgid "* mouse buttons (1, 2, 3, 4, and 5)"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:972
+msgid "* caps lock"
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:977
+msgid "SENDEVENT NOTES"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:979
+msgid ""
+"If you are trying to send key input to a specific window, and it does not "
+"appear to be working, then it's likely your application is ignoring the "
+"events xdotool is generating. This is fairly common."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:983
+msgid ""
+"Sending keystrokes to a specific window uses a different API than simply "
+"typing to the active window. If you specify 'xdotool type --window 12345 "
+"hello' xdotool will generate key events and send them directly to window "
+"12345.  However, X11 servers will set a special flag on all events generated "
+"in this way (see XEvent.xany.send_event in X11's manual). Many programs "
+"observe this flag and reject these events."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:990
+msgid ""
+"It is important to note that for key and mouse events, we only use "
+"L<XSendEvent> when a specific window is targeted. Otherwise, we use "
+"L<XTEST>."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:993
+msgid ""
+"Some programs can be configured to accept events even if they are generated "
+"by xdotool. Seek the documentation of your application for help."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:996
+msgid ""
+"Specific application notes (from the author's testing): * Firefox 3 seems to "
+"ignore all input when it does not have focus.  * xterm can be configured "
+"while running with ctrl+leftclick, 'Allow SendEvents' * gnome-terminal "
+"appears to accept generated input by default."
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:1001
+msgid "WINDOW STACK"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1003
+msgid ""
+"Certain commands (search, getactivewindow, getwindowfocus) will find windows "
+"for you. These results generally printed to stdout, but they are also saved "
+"to memory for future use during the lifetime of the xdotool process. See "
+"L<COMMAND CHAINING> for more information."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1008
+msgid ""
+"The only modifications support for the window stack are to replace it. That "
+"is, two of two sequential searches, only the last one's results will be the "
+"window stack."
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:1012
+msgid "COMMAND CHAINING"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1014
+msgid ""
+"xdotool supports running multiple commands on a single "
+"invocation. Generally, you'll start with a search command (see L<WINDOW "
+"STACK>) and then perform a set of actions on those results."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1018
+msgid ""
+"To query the window stack, you can use special notation \"%N\" where N is a "
+"number or the '@' symbol. If %N is given, the Nth window will be selected "
+"from the window stack. Generally you will only want the first window or all "
+"windows.  Note that the order of windows in the window stack corresponds to "
+"the window stacking order, i.e. the bottom-most window will be reported "
+"first (see XQueryTree(3)). Thus the order of the windows in the window stack "
+"may not be consistent across invocations."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1026
+msgid ""
+"The notation described above is used as the \"window\" argument for any "
+"given command."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1029
+msgid "For example, to resize all xterms to 80x24:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:1031
+#, no-wrap
+msgid ""
+" xdotool search --class xterm -- windowsize --usehints %@ 80 24\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1033
+msgid "Resize move the current window:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:1035
+#, no-wrap
+msgid ""
+" xdotool getactivewindow windowmove 0 0\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1037
+msgid ""
+"In all cases, the default window argument, if omitted, will default to "
+"\"%1\". It is obviously an error if you omit the window argument and the "
+"window stack is empty. If you try to use the window stack and it is empty, "
+"it is also an error."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1041
+msgid "To activate the first firefox window found:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:1043
+#, no-wrap
+msgid ""
+" xdotool search --class firefox windowactivate\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1045
+msgid "These would error:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:1047
+#, no-wrap
+msgid ""
+" xdotool windowactivate\n"
+" xdotool windowactivate %1\n"
+" xdotool windowactivate %@\n"
+"\n"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1051
+msgid "When xdotool exits, the current window stack is lost."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1053
+msgid ""
+"Additinally, commands that modify the L<WINDOW STACK> will not print the "
+"results if they are not the last command. For example:"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:1056
+#, no-wrap
+msgid ""
+" # Output the active window:\n"
+" % xdotool getactivewindow \n"
+" 20971533\n"
+"\n"
+msgstr ""
+
+#. type: verbatim
+#: xdotool.pod:1060
+#, no-wrap
+msgid ""
+" # Output the pid of the active window, but not the active window id:\n"
+" % xdotool getactivewindow getwindowpid\n"
+" 4686\n"
+"\n"
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:1064
+msgid "EXTENDED WINDOW MANAGER HINTS"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1066
+msgid "The following pieces of the EWMH standard are supported:"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:1070
+msgid "_NET_SUPPORTED"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1072
+msgid "Asks the window manager what is supported"
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:1074
+msgid "_NET_CURRENT_DESKTOP"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1076
+msgid ""
+"Query and set the current desktop. Support for this enables these commands: "
+"C<set_desktop>, C<get_desktop>."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:1079
+msgid "_NET_WM_DESKTOP"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1081
+msgid ""
+"Query and set what desktop a window is living in. Support for this enables "
+"these commands: C<set_desktop_for_window>, C<get_desktop_for_window>."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:1084
+msgid "_NET_ACTIVE_WINDOW"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1086
+msgid ""
+"Allows you to query and set the active window by asking the window manager "
+"to bring it forward. Support for this enables these commands: "
+"C<windowactivate>, C<getactivewindow>."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:1089
+msgid "_NET_WM_PID"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1091
+msgid ""
+"This feature is application dependent, not window-manager dependent. Query "
+"the PID owning a given window. Support for this enables these commands: "
+"C<getwindowpid>."
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:1097
+msgid "SUPPORTED FEATURES"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1099
+msgid ""
+"xdotool (and libxdo) will try to function under all circumstances. However, "
+"there may be some cases where functionality is not provided by your X server "
+"or by your window manager. In these cases, xdotool will try to detect and "
+"tell you if an action requires a feature not currently supported by your "
+"system."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1104
+msgid "For window-manager specific features, see L<EXTENDED WINDOW MANAGER HINTS>."
+msgstr ""
+
+#. type: =item
+#: xdotool.pod:1108
+msgid "XTEST"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1110
+msgid ""
+"If your X server does not support XTEST, then some typing and mouse movement "
+"features may not work. Specifically, typing and mouse actions that act on "
+"the \"current window\" (window 0 in libxdo) are unlikely to work."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1114
+msgid ""
+"In most cases, XTEST is a feature you can enable on your X server if it is "
+"not enabled by default."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1117
+msgid ""
+"You can see the list of supported X extensions by typing 'xdpyinfo' and "
+"looking the text 'number of extensions: ...'"
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:1122
+msgid "SEE ALSO"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1124
+msgid "L<xprop(1)>, L<xwininfo(1)>,"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1126
+msgid "Project site: L<http://www.semicomplete.com/projects/xdotool>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1128
+msgid "Google Code: L<http://semicomplete.googlecode.com/>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1130
+msgid ""
+"EWMH specification: "
+"L<http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html>"
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:1132
+msgid "CONTACT"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1134
+msgid ""
+"Please send questions to xdotool-users@googlegroups.com. File bugs and "
+"feature requests at the following URL:"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1136
+msgid "L<http://code.google.com/p/semicomplete/issues/list>"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1138
+msgid ""
+"Alternately, if you prefer email, feel free to file bugs by emailing the "
+"list.  What works for you :)"
+msgstr ""
+
+#. type: =head1
+#: xdotool.pod:1141
+msgid "AUTHOR"
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1143
+msgid "xdotool was written by Jordan Sissel."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1145
+msgid ""
+"This manual page was written originally by Daniel Kahn Gillmor "
+"E<lt>dkg@fifthhorseman.netE<gt> for the Debian project (but may be used by "
+"others). It is maintained by Jordan Sissel."
+msgstr ""
+
+#. type: textblock
+#: xdotool.pod:1149
+msgid ""
+"Patches, ideas, and other contributions by many, nice folks. See the "
+"CHANGELIST file for who provided what."
+msgstr ""
